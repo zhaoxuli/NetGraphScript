@@ -1,0 +1,30 @@
+---
+title: "Lab3: SNA 可视化"
+author: "陈华珊"
+date: "2019年4月14日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 数据
+
+`chinese_sociologist.RDS` 是一个社会学者学术关联网络，其节点包含如下属性：
+
+vertex.names: 姓名
+firstPub: 首次发表年份
+lastPub: 最后一次发表年份
+numArticles：发表数量
+numQuant：量化文章数量
+hasQuant：是否发表过量化文章
+
+
+要求：
+使用合理的网络指标以及上述节点属性信息，对该学者网络进行可视化。
+
+```{r}
+library(igraph)
+g <- readRDS('chinese_sociologist.RDS')
+```
